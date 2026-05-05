@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Rays Inter College</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4fff7;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #c8facc;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #home img {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 15px;
+            border: none;
+            background: #2e7d32;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #66bb6a;
+        }
+
+        /* NEW SECTION */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature-box {
+            background: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+        }
+
+        .course {
+            margin: 15px auto;
+            padding: 15px;
+            border: 1px solid #ddd;
+            max-width: 400px;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        @media(max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Morning Rays Inter College</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home">
+    <h2>Welcome to Morning Rays Inter College</h2>
+    <p>Building bright futures with quality education 🌟</p>
+
+    <img src="https://via.placeholder.com/600x300/66bb6a/ffffff?text=Our+School" alt="School">
+
+    <br>
+    <button onclick="showWelcome()">Click Me</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Morning Rays Inter College is dedicated to providing quality education,
+        discipline, and overall development of students in a safe and friendly environment.
+    </p>
+</section>
+
+<!-- NEW ATTRACTIVE SECTION -->
+<section id="features">
+    <h2>Why Choose Our School?</h2>
+
+    <div class="features">
+        <div class="feature-box">
+            <h3>👨‍🏫 Experienced Teachers</h3>
+            <p>Highly qualified and supportive teaching staff.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>📚 Modern Education</h3>
+            <p>Smart classes and updated learning methods.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>🏫 Safe Environment</h3>
+            <p>Secure and disciplined campus for students.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>⚽ Activities</h3>
+            <p>Sports, cultural events and personality development.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+    <h2>Our Courses</h2>
+
+    <div class="course">
+        <h3>Science</h3>
+        <p>Physics, Chemistry, Biology.</p>
+    </div>
+
+    <div class="course">
+        <h3>Mathematics</h3>
+        <p>Logical and analytical skills.</p>
+    </div>
+
+    <div class="course">
+        <h3>Computer</h3>
+        <p>Programming and digital learning.</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<script>
+    function showWelcome() {
+        alert("Welcome to Morning Rays Inter College!");
+    }
+
+    function validateForm() {
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill all fields!");
+            return false;
+        }
+
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (!email.match(emailPattern)) {
+            alert("Enter valid email!");
+            return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>
